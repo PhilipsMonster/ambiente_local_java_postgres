@@ -7,7 +7,7 @@
   
   vars_files:
     - vars.yml
-  
+
   tasks:
     - name: Ajustando Timezone
       timezone:
@@ -175,13 +175,14 @@
       become_user: postgres
       postgresql_table:
         db: "{{db_name}}"
-        name: table_name
+        name: message
         columns:
-        - id bigserial primary key
-        - num bigint
-        - message text
-        - name text
-        owner: admin
+        - message_id serial PRIMARY KEY
+        - first_name VARCHAR (255)
+        - last_name VARCHAR (355)
+        - message_date DATE NOT NULL
+        - message text NOT NULL
+        owner: "{{db_user}}"
 
   handlers:
     - name: restart postgres
