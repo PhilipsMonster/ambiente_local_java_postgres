@@ -101,11 +101,12 @@ Exemplo:
 	ADD ./target/nomeDoProjeto-0.0.1-SNAPSHOT.jar nomeDoProjeto.jar
 	ENTRYPOINT [ "java", "-jar", "/nomeDoProjeto.jar" ]
 23-Criar uma imagem Docker
-a-ir para a pasta raiz do projeto
-b-Digitar o comando para compilar um jar: mvn clean package
-c-Após a criação do jar, buildar uma image: docker build -t nomeImagem:v1 .
-d-Criar um container a partir da imagem: docker run -p 8080:8080 --name nomeContainer nomeImagem:v1
-e-Star do container: docker start nomeContainer
+a:ir para a pasta raiz do projeto
+b:Compilar um jar: mvn clean package
+c:Após a criação do jar, buildar uma imagem: docker build -t nomeImagem:v1 .
+d:Criar um container a partir da imagem: docker run -p 8080:8080 --name nomeContainer nomeImagem:v1
+e:Sair: ctrl + c
+f-Iniciar o container: docker start nomeContainer
 24-Acessar o container via Postman local
 a-Em um novo request do Postman configurar a url: http://192.168.33.11:8080 --Exemplo--
 b-Executar o request
